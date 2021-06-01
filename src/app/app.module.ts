@@ -12,9 +12,10 @@ import {PostService} from "./services/post.service";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import {UserDetailsComponent} from './components/user-details/user-details.component';
-import { PostDetailsComponent } from './components/post-details/post-details.component';
+import {PostDetailsComponent} from './components/post-details/post-details.component';
+import {DeactivatorService} from "./services/deactivator.service";
 
-let routes : Routes = [
+let routes: Routes = [
   {
     path: 'users', component: UsersComponent,
     children: [
@@ -22,8 +23,8 @@ let routes : Routes = [
     ]
   },
   {path: 'home', component: HomeComponent},
-  {path:'posts', component:PostsComponent},
-  {path:'posts/:id', component:PostDetailsComponent}
+  {path: 'posts', component: PostsComponent, canDeactivate: [DeactivatorService]},
+  {path: 'posts/:id', component: PostDetailsComponent, canActivate: [DeactivatorService]}
 ];
 
 @NgModule({
