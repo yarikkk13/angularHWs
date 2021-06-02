@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 export class CommentsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe(value => console.log(value))
+    this.activatedRoute.data.subscribe(value => console.log(value.data))
   }
 
   ngOnInit(): void {
