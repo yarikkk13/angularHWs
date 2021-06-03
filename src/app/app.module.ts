@@ -8,10 +8,15 @@ import {UsersComponent} from './components/users/users.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {UserService} from "./services/user.service";
+import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 let routes = [
   {path: 'users', component: UsersComponent},
-  {path: 'users/:id', component: UserDetailsComponent}
+  {path: 'users/:id', component: UserDetailsComponent},
+  {path:'posts', component: PostsComponent},
+  {path: 'posts/:id',component: PostDetailsComponent}
 ];
 
 @NgModule({
@@ -19,7 +24,10 @@ let routes = [
     AppComponent,
     UserComponent,
     UserDetailsComponent,
-    UsersComponent
+    UsersComponent,
+    PostsComponent,
+    PostComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
