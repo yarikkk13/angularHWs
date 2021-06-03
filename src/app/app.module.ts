@@ -11,12 +11,17 @@ import {UserService} from "./services/user.service";
 import { PostsComponent } from './components/posts/posts.component';
 import { PostComponent } from './components/post/post.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 let routes = [
   {path: 'users', component: UsersComponent},
   {path: 'users/:id', component: UserDetailsComponent},
   {path:'posts', component: PostsComponent},
-  {path: 'posts/:id',component: PostDetailsComponent}
+  {path: 'posts/:id',component: PostDetailsComponent},
+  {path: 'comments',component: PostsComponent},
+  {path: 'comments/:id',component: PostDetailsComponent}
 ];
 
 @NgModule({
@@ -27,7 +32,10 @@ let routes = [
     UsersComponent,
     PostsComponent,
     PostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    CommentsComponent,
+    CommentDetailsComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
