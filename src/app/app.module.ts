@@ -10,6 +10,7 @@ let routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'users', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)},
+  {path: 'posts', loadChildren: () => import('./modules/post/post.module').then(m => m.PostModule)},
 ];
 
 @NgModule({
