@@ -1,7 +1,11 @@
-<ul>
-  <li><a [routerLink]="['home']">home</a></li>
-  <li><a routerLink="users">users</a></li>
-  <li><a [routerLink]="['posts']">posts</a></li>
-  <li><a [routerLink]="['comments']">comments</a> </li>
-</ul>
+<!--<ul>-->
+<!--  <li><a [routerLink]="['home']">home</a></li>-->
+<!--  <li><a routerLink="users">users</a></li>-->
+<!--  <li><a [routerLink]="['posts']">posts</a></li>-->
+<!--  <li><a [routerLink]="['comments']">comments</a> </li>-->
+<!--</ul>-->
+<div style="display: flex;background: blue">
+  <div style="display: flex; justify-content: center;width: 50%"><button><a [routerLink]="['users']">users</a> </button></div>
+  <div style="display: flex; justify-content: center;width: 30%"><button><a [routerLink]="['posts']">posts</a> </button></div>
+</div>
 <router-outlet></router-outlet>

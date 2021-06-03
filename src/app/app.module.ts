@@ -16,6 +16,7 @@ import {PostDetailsComponent} from './components/post-details/post-details.compo
 import {DeactivatorService} from "./services/deactivator.service";
 import {CommentsComponent} from './components/comments/comments.component';
 import {ResolveService} from "./services/resolve.service";
+import {ResolvePostService} from "./services/resolve-post.service";
 
 let routes: Routes = [
   {
@@ -25,9 +26,12 @@ let routes: Routes = [
     ]
   },
   {path: 'home', component: HomeComponent},
-  {path: 'posts', component: PostsComponent, canDeactivate: [DeactivatorService]},
-  {path: 'posts/:id', component: PostDetailsComponent, canActivate: [DeactivatorService]},
-  {path: 'comments', component: CommentsComponent, resolve: {data:ResolveService}},
+  {
+    path: 'posts', component: PostsComponent, children: [
+      {path: ':id', component: PostDetailsComponent}
+    ], resolve:{data: ResolvePostService}
+  },
+  {path: 'comments', component: CommentsComponent, resolve: {data: ResolveService}},
 ];
 
 @NgModule({

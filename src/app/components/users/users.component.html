@@ -1,2 +1,9 @@
-<app-user [user]="user" *ngFor="let user of users"></app-user>
-<router-outlet></router-outlet>
+<div style="display: flex">
+  <div style="width: 50%">
+    <app-user [user]="user" *ngFor="let user of users"></app-user>
+  </div>
+  <div style="width: 50%">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

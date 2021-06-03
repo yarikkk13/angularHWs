@@ -1,1 +1,8 @@
-<app-post [post]="post" *ngFor="let post of posts"></app-post>
+<div style="display: flex">
+  <div style="width: 50%">
+    <app-post [post]="post" *ngFor="let post of posts"></app-post>
+  </div>
+  <div style="width: 50%">
+    <router-outlet></router-outlet>
+  </div>
+</div>
