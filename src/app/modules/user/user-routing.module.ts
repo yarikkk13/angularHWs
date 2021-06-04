@@ -6,7 +6,7 @@ import {ResolveUserService} from "./services/resolve-user.service";
 
 const routes: Routes = [
   {path: '', component: UsersComponent, resolve:{allUsers:ResolveUserService}},
-  {path: ':id', component: UserDetailsComponent},
+  {path: ':id', component: UserDetailsComponent},  // тут треба резолв?
 ];
 
 @NgModule({

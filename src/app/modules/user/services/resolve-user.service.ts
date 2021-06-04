@@ -2,17 +2,18 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 import {IUser} from "../../../models/user";
 import {Observable} from "rxjs";
-import {UserService} from "./user.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResolveUserService implements Resolve<IUser[]> {
+  private url: string = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor(private userService: UserService) {
+  constructor(private httpClient: HttpClient) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser[]> | Promise<IUser[]> | IUser[] {
-    return this.userService.getUsers();
+    return this.httpClient.get<IUser[]>(this.url);
   }
 }

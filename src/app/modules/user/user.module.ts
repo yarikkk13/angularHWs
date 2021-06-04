@@ -22,7 +22,7 @@ import {ResolveUserService} from "./services/resolve-user.service";
     HttpClientModule
   ],
   providers: [
-    UserService,
+    UserService, // цей сервіс треба затерти?
     ResolveUserService
   ]
 })
