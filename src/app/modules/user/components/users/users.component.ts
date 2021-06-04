@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {IComment} from "../../../../models/comment";
-import {CommentService} from "../../../comment/services/comment.service";
 import {IUser} from "../../../../models/user";
 import {UserService} from "../../services/user.service";
 
@@ -10,6 +8,8 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+
   users: IUser[];
 
   constructor(private userService: UserService) {

@@ -7,6 +7,7 @@ import {UsersComponent} from './components/users/users.component';
 import {UserComponent} from './components/user/user.component';
 import {HttpClientModule} from "@angular/common/http";
 import {UserService} from "./services/user.service";
+import {ResolveUserService} from "./services/resolve-user.service";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {UserService} from "./services/user.service";
     HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,
+    ResolveUserService
   ]
 })
 export class UserModule {

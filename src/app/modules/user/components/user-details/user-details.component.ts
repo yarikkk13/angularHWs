@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IComment} from "../../../../models/comment";
-import {ActivatedRoute} from "@angular/router";
-import {CommentService} from "../../../comment/services/comment.service";
-import {UserService} from "../../services/user.service";
+import {ActivatedRoute, Router} from "@angular/router";
 import {IUser} from "../../../../models/user";
 
 @Component({
@@ -14,15 +11,15 @@ export class UserDetailsComponent implements OnInit {
   user: IUser;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService) {
+              private router: Router) {
+    this.activatedRoute.params
+      .subscribe(params => {
+        this.user = this.router.getCurrentNavigation()?.extras.state as IUser
+      })
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .subscribe(params => {
-        this.userService.getUser(params.id)
-          .subscribe(value => this.user = value)
-      })
+
   }
 
 }
