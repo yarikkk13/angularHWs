@@ -6,7 +6,6 @@ import {CommentDetailsComponent} from './components/comment-details/comment-deta
 import {CommentsComponent} from './components/comments/comments.component';
 import {CommentComponent} from './components/comment/comment.component';
 import {HttpClientModule} from "@angular/common/http";
-import {CommentService} from "./services/comment.service";
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import {CommentService} from "./services/comment.service";
     HttpClientModule
   ],
   providers: [
-    CommentService
   ]
 })
 export class CommentModule {

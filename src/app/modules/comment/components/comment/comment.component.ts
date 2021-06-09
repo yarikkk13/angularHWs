@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {IComment} from "../../../../models/comment";
 
 @Component({
   selector: 'app-comment',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
+  @Input()
+  comment: IComment;
+  @Output()
+  commentLift = new EventEmitter<IComment>()
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  chooseComment() {
+    this.commentLift.emit(this.comment)
+
+  }
 }

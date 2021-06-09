@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IUser} from "../../../../models/user";
+import {DataTransferService} from "../../../../services/data-transfer.service";
 
 @Component({
   selector: 'app-user',
@@ -9,6 +10,7 @@ import {IUser} from "../../../../models/user";
 export class UserComponent implements OnInit {
   @Input()
   user: IUser;
+  private dataTransfer: DataTransferService;
 
 
   constructor() {
@@ -17,4 +19,9 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  storeUser() {
+    let currentStore = this.dataTransfer.store.getValue()
+    currentStore.push(this.user)
+    this.dataTransfer.store.next(currentStore)
+  }
 }
